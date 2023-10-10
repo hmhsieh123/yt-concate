@@ -1,3 +1,6 @@
+# step.py
+# process新增data參數
+
 # 寫抽象類別，做為介面，之後的子孫繼承它，都是用這個介面來操作
 # 抽象類別，裡面至少要有一個abstract method
 from abc import ABC
@@ -8,8 +11,9 @@ class Step(ABC):
         pass
 
     @abstractclassmethod
-    def process(self, data,  inputs): # 子孫要改寫 process
-        #  inputs 是一個字典，從main傳進來，內容為channel id、keyword...
+    def process(self, data,  inputs, utils): # 子孫要改寫 process
+        # inputs 是一個字典，從main傳進來，內容為channel id、keyword...
+				# 新增 data
         pass
 
 class StepException(Exception): 
